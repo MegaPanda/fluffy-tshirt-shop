@@ -184,6 +184,7 @@ header {
   }
 
   #cart {
+    display: none;
     position: relative;
     padding: 0 0 10px 0;
     animation-name: slide-in;
