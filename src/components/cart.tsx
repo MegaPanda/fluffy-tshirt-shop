@@ -26,7 +26,7 @@ type CartProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispa
 const Cart = (props: CartProps) => {
     const node = useRef<HTMLDivElement>(null);
 
-    const [shoppingCartShown, showShoppingCart] = useState({display: "none"});
+    const [shoppingCartShown, showShoppingCart] = useState({});
 
     const handleClick = (event: MouseEvent) => {
         if (node.current?.contains(event.target as Node)) {
