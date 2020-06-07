@@ -140,7 +140,6 @@ header {
 #shopping-cart-button {
   all: unset;
   display: none;
-  
 }
 
 .cart__info {
@@ -185,9 +184,9 @@ header {
   }
 
   #cart {
+    display: none;
     position: relative;
     padding: 0 0 10px 0;
-    
     animation-name: slide-in;
     animation-duration: 1s;
   }
