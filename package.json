@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://megapanda.github.io/react-shopping-cart/",
+  "homepage": "https://MegaPanda.github.io/react-shopping-cart/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
