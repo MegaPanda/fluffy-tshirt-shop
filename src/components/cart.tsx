@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { removeItem } from '../actions/cartActions';
@@ -24,52 +24,56 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
 type CartProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>;
 
 const Cart = (props: CartProps) => {
-    const node = useRef<HTMLDivElement>(null);
-
-    const [shoppingCartShown, showShoppingCart] = useState({});
-
-    const handleClick = (event: MouseEvent) => {
-        if (node.current?.contains(event.target as Node)) {
-            return;
-        }
-        showShoppingCart({display: "none"});
-    }
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        document.addEventListener('mousedown', handleClick);
-
-        return () => {
-            document.removeEventListener('mousedown', handleClick);
-        };
-    });
+        window.addEventListener("resize", () => setScreenWidth(window.innerWidth));
+    }, []);
+    
+    const screenSize = () => {
+        if (screenWidth > 600) { 
+            return {display: "block"};
+        } else {
+            return {display: "none"};
+        }
+    };
+    
+    const [shoppingCartShown, showShoppingCart] = useState(screenSize());
 
     return (
-        <div>
-            <button id="shopping-cart-button" onClick={() => showShoppingCart({display: "unset"})}>
+        <div id="sidebar">
+            <button id="shopping-cart-button" onClick={() => showShoppingCart({display: "grid"})}>
                 <span id="shopping-cart-icon" className="material-icons">shopping_cart</span>
                 <span id="shopping-cart-quantity">{props.total_quantity}</span>
             </button>
-            <div id="cart" ref={node} style={shoppingCartShown}>
-                <h4 className="cart__info">You have {props.total_quantity} item(s) in the cart.</h4>
-                <ul>
-                {props.items?.map((item, index) => 
-                    <li key={index}>
-                        <p>{item.title}</p>
-                        <div className="cart-item">
-                            <img className="cart-item__photo" src={item.photo} alt={item.title}></img>
-                            <div className="cart-item__quantity">
-                                <span style={{fontSize: "14px"}}>Size:</span>
-                                <ul style={{fontSize: "13px"}}>
-                                    {item.sizes.map((size, index) => 
-                                        <li key={index}>{size.size} x {size.quantity}</li>
-                                    )}
-                                </ul>
+            <div  id="cart" style={shoppingCartShown}>
+                <div id="cart-close">
+                    <button onClick={() => showShoppingCart({display: "none"})}>
+                        <span className="material-icons" style={{transform: "rotate(90deg)"}}>expand_less</span>
+                    </button>
+                </div>
+                <div id="cart-content">
+                    <h4 className="cart__info">You have {props.total_quantity} item(s) in the cart.</h4>
+                    <ul>
+                    {props.items?.map((item, index) => 
+                        <li key={index}>
+                            <p>{item.title}</p>
+                            <div className="cart-item">
+                                <img className="cart-item__photo" src={item.photo} alt={item.title}></img>
+                                <div className="cart-item__quantity">
+                                    <span style={{fontSize: "14px"}}>Size:</span>
+                                    <ul style={{fontSize: "13px"}}>
+                                        {item.sizes.map((size, index) => 
+                                            <li key={index}>{size.size} x {size.quantity}</li>
+                                        )}
+                                    </ul>
+                                </div>
+                                <button className="cart-item__remove material-icons" onClick={() => props.removeCartItem(item)}>delete_outline</button>
                             </div>
-                            <button className="cart-item__remove material-icons" onClick={() => props.removeCartItem(item)}>delete_outline</button>
-                        </div>
-                    </li>)}
-                </ul>
-                <h4 className="cart__info">Total price: {props.total_price}</h4>
+                        </li>)}
+                    </ul>
+                    <h4 className="cart__info">Total price: {props.total_price}</h4>
+                </div>
             </div>
         </div>
     )

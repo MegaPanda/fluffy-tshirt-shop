@@ -14,9 +14,7 @@ export function App() {
             <Display />
             <Item />
           </div>
-          <div id="sidebar">
-              <Cart />
-          </div>
+          <Cart />
         </div>
       </div>
     )
