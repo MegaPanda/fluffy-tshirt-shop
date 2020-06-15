@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
 import { addItem } from '../actions/cartActions';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Product } from '../reducers/ProductsReducer';
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
-    return ({
-        addNewItem: (product: Product | null, size: string | null) => {
-            return dispatch(addItem(product, size));
-        }
-    })
-};
 
 interface ModalProps {
     modalProduct: Product | null;
@@ -18,8 +10,11 @@ interface ModalProps {
     isOpen: boolean;
 }
 
-const Modal = (props: ModalProps & ReturnType<typeof mapDispatchToProps>) => {
+const Modal = (props: ModalProps) => {
     const [sizeChosen, chooseSize] = useState<string | null>(null);
+
+    const dispatch = useDispatch();
+
     if (props.modalProduct === null) {
         return null;
     } else {
@@ -45,9 +40,9 @@ const Modal = (props: ModalProps & ReturnType<typeof mapDispatchToProps>) => {
                                         )}
                                 </select>
                                 <button className="modal__add-to-cart" onClick={() => {
-                                    props.addNewItem(props.modalProduct, sizeChosen);
+                                    dispatch(addItem(props.modalProduct, sizeChosen));
                                     props.closeModal();
-                                }}>ADD TO CART </button>
+                                }}>ADD TO CART</button>
                             </div>
                         </div> 
                     </div>
@@ -60,4 +55,4 @@ const Modal = (props: ModalProps & ReturnType<typeof mapDispatchToProps>) => {
     }
 };
 
-export default connect(null, mapDispatchToProps)(Modal);
+export default Modal;

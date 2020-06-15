@@ -1,26 +1,17 @@
-import React, { ChangeEvent } from 'react';
-import { Dispatch } from 'redux';
+import React from 'react';
 import { displayProducts } from '../actions/productsAction';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { UNDER_10, PRICE_ALL, NEW, HIGH_TO_LOW, LOW_TO_HIGH, SIZE_ALL, S, M, L, SORT, PRICE, SIZE } from '../constants/index';
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
-    return ({
-        displayProducts: (category: string, event: ChangeEvent<HTMLSelectElement>) => {
-            dispatch(displayProducts(category, event.currentTarget.value))
-        }
-    })
-}
 
-type DisplayProps = ReturnType<typeof mapDispatchToProps>;
-
-const Display = (props: DisplayProps) => {
+const Display = () => {
+    const dispatch = useDispatch();
     return (
         <div id="display">
             <div id="filter-sort">
                 <label>
                     Sort:&nbsp;&nbsp;
-                    <select className="filter__options" onChange={(event) => props.displayProducts(SORT, event)}>
+                    <select className="filter__options" onChange={(event) => dispatch(displayProducts(SORT, event.target.value))}>
                         <option value={NEW}>What's new</option>
                         <option value={HIGH_TO_LOW}>Price high to low</option>
                         <option value={LOW_TO_HIGH}>Price low to high</option>
@@ -30,7 +21,7 @@ const Display = (props: DisplayProps) => {
             <div id="filter-price">
                 <label>
                     Price:&nbsp;&nbsp;
-                    <select className="filter__options" onChange={(event) => props.displayProducts(PRICE, event)}>
+                    <select className="filter__options" onChange={(event) => dispatch(displayProducts(PRICE, event.target.value))}>
                         <option value={PRICE_ALL}>All</option>
                         <option value={UNDER_10}>Under $10</option>    
                     </select> 
@@ -39,7 +30,7 @@ const Display = (props: DisplayProps) => {
             <div id="filter-size">
                 <label>
                     Size:&nbsp;&nbsp;
-                    <select className="filter__options" onChange={(event) => props.displayProducts(SIZE, event)}>
+                    <select className="filter__options" onChange={(event) => dispatch(displayProducts(SIZE, event.target.value))}>
                         <option value={SIZE_ALL}>All</option>
                         <option value={S}>S</option>
                         <option value={M}>M</option>
@@ -51,4 +42,4 @@ const Display = (props: DisplayProps) => {
     )
 }
 
-export default connect(null, mapDispatchToProps)(Display);
+export default Display;

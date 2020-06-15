@@ -1,40 +1,27 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../reducers/index';
 import { Product } from '../reducers/ProductsReducer';
 import { addItem } from '../actions/cartActions';
 
 ReactModal.setAppElement('#root');
 
-const mapStateToProps = (state: RootState) => {
-    return ({
-        products: state.DisplayProductsReducer.products
-    })
-};
+const Item = () => {
+    const products = useSelector((state: RootState) => state.DisplayProductsReducer.products);
+    const dispatch = useDispatch();
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
-    return ({
-        addNewItem: (product: Product | null, size: string | null) => {
-            return dispatch(addItem(product, size));
-        }
-    })
-};
-
-
-type ItemProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>;
-
-const Item = (props: ItemProps) => {
     const [modalProduct, showModal] = useState<Product | null>(null);
+    
     const [sizeChosen, chooseSize] = useState<string | null>(null);
+    
     return (
         <div id="items">
-            { props.products.map( (product, index) => 
+            { products.map( (product, index) => 
                 <button key={index} className="modalClick" onClick={() => showModal(product)}>   
                     <div className="item">
                         <div className="item__photo">
-                            <img style={{maxWidth: "200px"}} src={product.photo} alt={product.title}></img>
+                            <img style={{maxWidth: "100%"}} src={product.photo} alt={product.title}></img>
                             <h3 className="item__title">{product.title}</h3>
                         </div>
                         <div>
@@ -71,7 +58,7 @@ const Item = (props: ItemProps) => {
                                         )}
                                 </select>
                                 <button className="modal__add-to-cart" onClick={() => {
-                                    props.addNewItem(modalProduct, sizeChosen);
+                                    dispatch(addItem(modalProduct, sizeChosen));
                                     showModal(null);
                                 }}>ADD TO CART </button>
                             </div>
@@ -85,4 +72,4 @@ const Item = (props: ItemProps) => {
     )
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Item);
+export default Item;
