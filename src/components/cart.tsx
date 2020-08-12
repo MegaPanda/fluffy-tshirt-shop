@@ -5,8 +5,9 @@ import { RootState } from '../reducers/index';
 
 const shopping_cart_quantity_styles = {
     position: "relative",
+    width: "16px",
     top: "16px",
-    left: "-22px"
+    left: "-26px"
 } as CSSProperties;
 
 const shopping_cart_styles = {
@@ -50,7 +51,7 @@ const Cart = () => {
                     <div className="absolute" style={shopping_cart_triangle_up} ></div>
                     <div className="absolute border border-gray-500 bg-gray-300 text-gray-800 text-base overflow-auto" style={shopping_cart_styles} >
                         <h4 className="px-4 py-2 bg-gray-400">You have <span className="font-bold">{total_quantity}</span> item(s) in the basket.</h4>
-                        <ul>
+                        <ul className="border divide-y-2 divide-gray-400">
                         {items.map((item, index) => 
                             <li key={index} className="p-4 flex justify-between">
                                 <img className="w-32" src={item.photo} alt={item.title}></img>
