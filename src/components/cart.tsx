@@ -3,14 +3,19 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeItem } from '../actions/cartActions';
 import { RootState } from '../reducers/index';
 
-const shopping_cart_quantity_styles = {
+const shopping_basket_quantity_styles = {
     position: "relative",
     width: "16px",
     top: "16px",
-    left: "-26px"
+    right: "-18px"
 } as CSSProperties;
 
-const shopping_cart_styles = {
+const shopping_basket_icon_styles = {
+    position: "relative",
+    right: "8px",
+} as CSSProperties;
+
+const shopping_basket_styles = {
     top: "61px",
     right: "0",
     width: "350px",
@@ -18,7 +23,7 @@ const shopping_cart_styles = {
     borderTop: "none"
 } as CSSProperties;
 
-const shopping_cart_triangle_up = {
+const shopping_basket_triangle_up = {
     width: "0",
     height: "0",
     borderLeft: "14px solid transparent",
@@ -41,15 +46,15 @@ const Cart = () => {
         <div className="self-end group pl-2 pb-5 sm:pb-4">
             {/* shopping basket icon and item quantity */}
             <button className="flex">
-                <span className="inline-block material-icons text-4xl">shopping_basket</span>
-                <span style={shopping_cart_quantity_styles} className="inline-block bg-gray-300 text-blue-900 text-sm font-bold leading-none">{total_quantity}</span>
+                <span style={shopping_basket_quantity_styles} className="inline-block bg-gray-300 text-blue-900 text-sm font-bold leading-none z-10">{total_quantity}</span>
+                <span style={shopping_basket_icon_styles} className="inline-block material-icons text-4xl z-0">shopping_basket</span>
             </button>
             {/* shopping basket dropdown */}
             {total_quantity === 0 
                 ? null
                 : <div className="hidden sm:group-hover:block">
-                    <div className="absolute" style={shopping_cart_triangle_up} ></div>
-                    <div className="absolute border border-gray-500 bg-gray-300 text-gray-800 text-base overflow-auto" style={shopping_cart_styles} >
+                    <div className="absolute" style={shopping_basket_triangle_up} ></div>
+                    <div className="absolute border border-gray-500 bg-gray-300 text-gray-800 text-base overflow-auto" style={shopping_basket_styles} >
                         <h4 className="px-4 py-2 bg-gray-400">You have <span className="font-bold">{total_quantity}</span> item(s) in the basket.</h4>
                         <ul className="border divide-y-2 divide-gray-400">
                         {items.map((item, index) => 
