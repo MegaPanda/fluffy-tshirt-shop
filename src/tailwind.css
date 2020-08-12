@@ -1,7 +1,11 @@
 @tailwind base;
 
+html {
+    @apply font-body
+}
+
 body {
-    @apply bg-indigo-100;
+    @apply bg-indigo-100
 }
 
 @tailwind components;

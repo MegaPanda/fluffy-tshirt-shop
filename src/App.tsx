@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Item  from './components/item';
 import Header from './components/header';
 import Display from './components/display';
