@@ -5,7 +5,7 @@ const products = [
     {
         index: 0,
         photo: "gsd.jpg",
-        title: "German Shepherd T-Shirt",
+        title: "German Shepherd",
         price: 19.99,
         sizes: {
             S: 0,
@@ -16,7 +16,7 @@ const products = [
     {
         index: 4,
         photo: "husky.jpg",
-        title: "Husky T-Shirt",
+        title: "Husky",
         price: 14.99,
         sizes: {
             S: 2,
@@ -27,7 +27,7 @@ const products = [
     {
         index: 2,
         photo: "golden.jpg",
-        title: "Golden Retriever T-Shirt",
+        title: "Golden Retriever",
         price: 19.99,
         sizes: {
             S: 2,
@@ -38,7 +38,7 @@ const products = [
     {
         index: 3,
         photo: "border.jpg",
-        title: "Border Collie T-Shirt",
+        title: "Border Collie",
         price: 9.99,
         sizes: {
             S: 2,
@@ -49,7 +49,7 @@ const products = [
     {
         index: 1,
         photo: "pug.jpg",
-        title: "Pug T-Shirt",
+        title: "Pug",
         price: 6.99,
         sizes: {
             S: 2,
