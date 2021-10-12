@@ -4,7 +4,7 @@ import { NEW, LOW_TO_HIGH, HIGH_TO_LOW, PRICE_ALL, UNDER_10, SIZE_ALL, S, M, L, 
 const products = [
     {
         index: 0,
-        photo: "gsd.jpg",
+        photo: "/public/gsd.jpg",
         title: "German Shepherd",
         price: 19.99,
         sizes: {
@@ -15,7 +15,7 @@ const products = [
     },
     {
         index: 4,
-        photo: "husky.jpg",
+        photo: "/public/husky.jpg",
         title: "Husky",
         price: 14.99,
         sizes: {
@@ -26,7 +26,7 @@ const products = [
     },
     {
         index: 2,
-        photo: "golden.jpg",
+        photo: "/public/golden.jpg",
         title: "Golden Retriever",
         price: 19.99,
         sizes: {
@@ -37,7 +37,7 @@ const products = [
     },
     {
         index: 3,
-        photo: "border.jpg",
+        photo: "/public/border.jpg",
         title: "Border Collie",
         price: 9.99,
         sizes: {
@@ -48,7 +48,7 @@ const products = [
     },
     {
         index: 1,
-        photo: "pug.jpg",
+        photo: "/public/pug.jpg",
         title: "Pug",
         price: 6.99,
         sizes: {
