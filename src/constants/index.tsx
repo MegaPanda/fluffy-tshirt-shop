@@ -4,6 +4,12 @@ export type ADD_ITEM = typeof ADD_ITEM;
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export type REMOVE_ITEM = typeof REMOVE_ITEM;
 
+export const CHANGE_ITEM_QUANTITY = 'CHANGE_ITEM_QUANTITY';
+export type CHANGE_ITEM_QUANTITY = typeof CHANGE_ITEM_QUANTITY;
+
+export const CLEAR_BASKET = 'CLEAR_BASKET';
+export type CLEAR_BASKET = typeof CLEAR_BASKET;
+
 export const NEW = 'NEW';
 export type NEW = typeof NEW;
 

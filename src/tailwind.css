@@ -1,11 +1,11 @@
 @tailwind base;
 
 html {
-    @apply font-body
+    @apply font-Montserrat
 }
 
 body {
-    @apply bg-indigo-100
+    @apply bg-blue-50
 }
 
 @tailwind components;
