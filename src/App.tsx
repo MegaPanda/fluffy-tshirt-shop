@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/header';
 import Products from './pages/products';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, HashRouter, Route, Switch } from "react-router-dom";
 import BasketItems from './pages/basket';
 import { useSelector } from 'react-redux';
 import { RootState } from './reducers';
@@ -14,7 +14,7 @@ export function App() {
   const basket_state = useSelector((state: RootState) => state.CartItemReducer);
   return (
       <div>
-        <Router basename={`/${process.env.PUBLIC_URL}`}>
+        <HashRouter>
           <Header basket_state={basket_state} />
           <Switch>
             <Route exact path="/">
@@ -30,7 +30,7 @@ export function App() {
               <Checkout />
             </Route>
           </Switch>
-        </Router>
+        </HashRouter>
       </div>
       
     )
