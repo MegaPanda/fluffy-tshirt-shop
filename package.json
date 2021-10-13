@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://megapanda.github.io/react-shopping-cart/",
   "private": true,
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
