@@ -14,7 +14,7 @@ export function App() {
   const basket_state = useSelector((state: RootState) => state.CartItemReducer);
   return (
       <div>
-        <Router>
+        <Router basename={`/${process.env.PUBLIC_URL}`}>
           <Header basket_state={basket_state} />
           <Switch>
             <Route exact path="/">
