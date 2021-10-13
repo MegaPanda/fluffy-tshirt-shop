@@ -1,22 +1,27 @@
 {
   "files": {
-    "main.css": "/react-shopping-cart/static/css/main.1b5edaf5.chunk.css",
-    "main.js": "/react-shopping-cart/static/js/main.aa526aeb.chunk.js",
-    "main.js.map": "/react-shopping-cart/static/js/main.aa526aeb.chunk.js.map",
-    "runtime-main.js": "/react-shopping-cart/static/js/runtime-main.59f25911.js",
-    "runtime-main.js.map": "/react-shopping-cart/static/js/runtime-main.59f25911.js.map",
-    "static/js/2.221f3e56.chunk.js": "/react-shopping-cart/static/js/2.221f3e56.chunk.js",
-    "static/js/2.221f3e56.chunk.js.map": "/react-shopping-cart/static/js/2.221f3e56.chunk.js.map",
-    "index.html": "/react-shopping-cart/index.html",
-    "precache-manifest.4fb48aab87d22e614ec90f0dbb6d6e1b.js": "/react-shopping-cart/precache-manifest.4fb48aab87d22e614ec90f0dbb6d6e1b.js",
-    "service-worker.js": "/react-shopping-cart/service-worker.js",
-    "static/css/main.1b5edaf5.chunk.css.map": "/react-shopping-cart/static/css/main.1b5edaf5.chunk.css.map",
-    "static/js/2.221f3e56.chunk.js.LICENSE.txt": "/react-shopping-cart/static/js/2.221f3e56.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.1b5edaf5.chunk.css",
+    "main.js": "./static/js/main.9edd210e.chunk.js",
+    "main.js.map": "./static/js/main.9edd210e.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.673723db.js",
+    "runtime-main.js.map": "./static/js/runtime-main.673723db.js.map",
+    "static/js/2.34b22177.chunk.js": "./static/js/2.34b22177.chunk.js",
+    "static/js/2.34b22177.chunk.js.map": "./static/js/2.34b22177.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.9c6ae4d3bd8d8af70f04c3d00707ff96.js": "./precache-manifest.9c6ae4d3bd8d8af70f04c3d00707ff96.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.1b5edaf5.chunk.css.map": "./static/css/main.1b5edaf5.chunk.css.map",
+    "static/js/2.34b22177.chunk.js.LICENSE.txt": "./static/js/2.34b22177.chunk.js.LICENSE.txt",
+    "static/media/border.jpg": "./static/media/border.d79653c4.jpg",
+    "static/media/golden.jpg": "./static/media/golden.4246235c.jpg",
+    "static/media/gsd.jpg": "./static/media/gsd.6151874a.jpg",
+    "static/media/husky.jpg": "./static/media/husky.d83a44a8.jpg",
+    "static/media/pug.jpg": "./static/media/pug.75862793.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.59f25911.js",
-    "static/js/2.221f3e56.chunk.js",
+    "static/js/runtime-main.673723db.js",
+    "static/js/2.34b22177.chunk.js",
     "static/css/main.1b5edaf5.chunk.css",
-    "static/js/main.aa526aeb.chunk.js"
+    "static/js/main.9edd210e.chunk.js"
   ]
 }
