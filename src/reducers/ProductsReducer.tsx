@@ -1,10 +1,15 @@
 import { displayProductsAction } from "../actions/productsAction";
 import { NEW, LOW_TO_HIGH, HIGH_TO_LOW, PRICE_ALL, UNDER_10, SIZE_ALL, S, M, L, SORT, PRICE, SIZE } from "../constants/index";
+import gsd from '../images/gsd.jpg';
+import husky from '../images/husky.jpg';
+import golden from '../images/golden.jpg';
+import border from '../images/border.jpg';
+import pug from '../images/pug.jpg';
 
 const products = [
     {
         index: 0,
-        photo: "/public/gsd.jpg",
+        photo: gsd,
         title: "German Shepherd",
         price: 19.99,
         sizes: {
@@ -15,7 +20,7 @@ const products = [
     },
     {
         index: 4,
-        photo: "/public/husky.jpg",
+        photo: husky,
         title: "Husky",
         price: 14.99,
         sizes: {
@@ -26,7 +31,7 @@ const products = [
     },
     {
         index: 2,
-        photo: "/public/golden.jpg",
+        photo: golden,
         title: "Golden Retriever",
         price: 19.99,
         sizes: {
@@ -37,7 +42,7 @@ const products = [
     },
     {
         index: 3,
-        photo: "/public/border.jpg",
+        photo: border,
         title: "Border Collie",
         price: 9.99,
         sizes: {
@@ -48,7 +53,7 @@ const products = [
     },
     {
         index: 1,
-        photo: "/public/pug.jpg",
+        photo: pug,
         title: "Pug",
         price: 6.99,
         sizes: {

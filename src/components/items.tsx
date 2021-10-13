@@ -11,8 +11,7 @@ const Items = ({products, basket_items}: {products: Product[], basket_items: Bas
     const dispatch = useDispatch();
 
     const [modalProduct, showModal] = useState<Product | null>(null);
-    const [sizeChosen, chooseSize] = useState<string | null>(null);
-    
+    const [sizeChosen, chooseSize] = useState<string | null>(null);  
     return (
         <div id="items" className="grid grid-cols-2 p-4 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {products.map((product, index) => 
