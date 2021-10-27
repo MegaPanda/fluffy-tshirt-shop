@@ -5,6 +5,10 @@ module.exports = {
     },
     theme: {
         extend: {
+            fontSize: {
+                '2xs': '0.5rem',
+                '3xs': '0.25rem',
+            },
             fontFamily: {
                 Montserrat: ['Montserrat', 'sans-serif']
             },
