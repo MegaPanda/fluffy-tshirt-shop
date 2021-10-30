@@ -39,6 +39,7 @@ const BasketItemUnit = ({item}: {item: BasketItem}) => {
                     onChange={(event) => SelectChangeItemQuantity(event, item)}
                     className="w-24 pt-6"
                     styles={{indicatorSeparator: base => ({...base, display: "none",})}}
+                    isSearchable={false}
                 />
             </div>
             <div className="pt-2 flex flex-col justify-between">

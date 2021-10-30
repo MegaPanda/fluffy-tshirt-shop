@@ -10,24 +10,9 @@ import { BasketState, clearBasket } from '../reducers/basketSlice';
 import { updateData, UserCheckoutForm } from '../reducers/checkoutSlice';
 
 const Checkout = ({basket_state}: {basket_state: BasketState}) => {
-    window.scrollTo({top: 0});
-
     const dispatch = useDispatch();
 
-    const methods = useForm<UserCheckoutForm>({
-        defaultValues: { 
-            firstname: '',
-            lastname: '',
-            shipAddress: '',
-            city: '',
-            postcode: '',
-            country: '',
-            cardNumber: '',
-            cardHolder: '',
-            validThru: '',
-            CVC: '',
-        },
-    });
+    const methods = useForm<UserCheckoutForm>();
 
     const [checkoutState, setCheckoutState] = useState<string>("address");
     const nextStep = (data: UserCheckoutForm, page: string) => {
@@ -48,8 +33,8 @@ const Checkout = ({basket_state}: {basket_state: BasketState}) => {
     };
     
     return (
-        <div className="pt-24 sm:pt-32 pb-32 px-4 max-w-lg m-auto">
-            <ProgressBar currentStep={checkoutState} />
+        <div className="pt-24 sm:pt-32 pb-10 px-4 w-full max-w-lg">
+            <ProgressBar total_quantity={basket_state.total_quantity} currentStep={checkoutState} />
             {checkoutState === "address" && 
                 <FormProvider {...methods}>
                     <AddressForm total_quantity={basket_state.total_quantity} nextStep={nextStep} />

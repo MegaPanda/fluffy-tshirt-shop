@@ -23,7 +23,7 @@ const Header = ({basket_state}: {basket_state: BasketState}) => {
                     <header style={{maxWidth: "1246px"}} className="py-2 sm:py-4 px-1 m-auto flex text-center">
                         <Link to="/basket" className="block p-1 w-14">
                             <p className="material-icons block">arrow_back_ios_new</p>
-                            <p className="text-3xs leading-3 font-bold">&nbsp;BASKET</p>
+                            <p className="text-2xs leading-3 font-bold">&nbsp;BASKET</p>
                         </Link>
                         <div className="flex-grow">
                             <span className="material-icons relative cursor-default" style={{top: "4px", fontSize: "36px"}}>pets</span>

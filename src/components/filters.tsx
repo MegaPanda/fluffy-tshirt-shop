@@ -65,6 +65,7 @@ const Filters = ({filters}: {filters: FiltersState}) => {
                                 <Select
                                     options={SortOptionsArray}
                                     styles={{indicatorSeparator: base => ({...base, display: "none",})}}
+                                    isSearchable={false}
                                     placeholder="Sort by"
                                     value={filters.sort ? SortOptionsArray.find(option => option.value === filters.sort) : null}
                                     onChange={(event) => event === null? null : dispatch(sortProducts(event.value))}
@@ -74,6 +75,7 @@ const Filters = ({filters}: {filters: FiltersState}) => {
                                 <Select
                                     options={PriceOptionsArray}
                                     styles={{indicatorSeparator: base => ({...base, display: "none",})}}
+                                    isSearchable={false}
                                     placeholder="Price"
                                     value={filters.price ? PriceOptionsArray.find(option => option.value === filters.price) : null}
                                     onChange={(event) => event === null? null : dispatch(filterByPrice(event.value))}
@@ -83,6 +85,7 @@ const Filters = ({filters}: {filters: FiltersState}) => {
                                 <Select
                                     options={SizeOptionsArray}
                                     styles={{indicatorSeparator: base => ({...base, display: "none",})}}
+                                    isSearchable={false}
                                     placeholder="Size"
                                     value={filters.size ? SizeOptionsArray.find(option => option.value === filters.size) : null}
                                     onChange={(event) => event === null? null : dispatch(filterBySize(event.value))}
@@ -99,6 +102,7 @@ const Filters = ({filters}: {filters: FiltersState}) => {
                     <Select
                         options={SortOptionsArray}
                         styles={{indicatorSeparator: base => ({...base, display: "none",})}}
+                        isSearchable={false}
                         placeholder="Sort by"
                         value={filters.sort ? SortOptionsArray.find(option => option.value === filters.sort) : null}
                         onChange={(event) => event === null? null : dispatch(sortProducts(event.value))}
@@ -108,6 +112,7 @@ const Filters = ({filters}: {filters: FiltersState}) => {
                     <Select
                         options={PriceOptionsArray}
                         styles={{indicatorSeparator: base => ({...base, display: "none",})}}
+                        isSearchable={false}
                         placeholder="Price"
                         value={filters.price ? PriceOptionsArray.find(option => option.value === filters.price) : null}
                         onChange={(event) => event === null? null : dispatch(filterByPrice(event.value))}
@@ -117,6 +122,7 @@ const Filters = ({filters}: {filters: FiltersState}) => {
                     <Select
                         options={SizeOptionsArray}
                         styles={{indicatorSeparator: base => ({...base, display: "none",})}}
+                        isSearchable={false}
                         placeholder="Size"
                         value={filters.size ? SizeOptionsArray.find(option => option.value === filters.size) : null}
                         onChange={(event) => event === null? null : dispatch(filterBySize(event.value))}

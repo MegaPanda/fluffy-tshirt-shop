@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import { useExternalScript } from '../custom-hooks/useExternalScript';
@@ -13,10 +13,15 @@ const AddressForm = ({
         nextStep: (data: UserCheckoutForm, page: string) => void
     }) => {
     
+    // always scroll the page to the top when the component is mounted //
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
+        
     const { register, formState: { errors }, setValue, handleSubmit } = useFormContext();
 
     /* Google places autocompete API  */
-    let externalScript = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCxnZ9Ie-zckirXiWKFVSzctS98afC_K9U&libraries=places";
+    let externalScript = "https://maps.googleapis.com/maps/api/js?key={enter_key_here}&libraries=places";
     useExternalScript(externalScript, "googleAutocomplete", initAutocomplete);
     let autocomplete: google.maps.places.Autocomplete;
     let addressField: HTMLInputElement;
@@ -65,6 +70,7 @@ const AddressForm = ({
             }
         }
     };
+
     // prevent user from filling the checkout form if the basket is empty //
     if (total_quantity === 0) {
         return (
@@ -81,14 +87,14 @@ const AddressForm = ({
                             <input type="text" {...register("firstname", { required: "Your first name is required." })}
                                 className="w-full h-10 mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" 
                             />
-                            <ErrorMessage errors={errors} name="firstname" render={({message}) => <p className="text-xs text-red-600 font-bold">{message}</p>} />
+                            <ErrorMessage errors={errors} name="firstname" render={({message}) => <span className="text-xs text-red-600 font-bold">{message}</span>} />
                         </div>
                         <div className="py-4">
                             <label htmlFor="lastname" className="block text-sm font-black text-gray-500">Last Name</label>
                             <input type="text" {...register("lastname", { required: "Your last name is required." })}
                                 className="w-full h-10 mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" 
                             />
-                            <ErrorMessage errors={errors} name="lastname" render={({message}) => <p className="text-xs text-red-600 font-bold">{message}</p>} />
+                            <ErrorMessage errors={errors} name="lastname" render={({message}) => <span className="text-xs text-red-600 font-bold">{message}</span>} />
                         </div>
                     </div>
                     <div className="py-4">
@@ -97,7 +103,7 @@ const AddressForm = ({
                             onKeyPress={(e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => { e.key === 'Enter' && e.preventDefault() }}
                             className="w-full h-10 mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" 
                         />
-                        <ErrorMessage errors={errors} name="shipAddress" render={({message}) => <p className="text-xs text-red-600 font-bold">{message}</p>} />
+                        <ErrorMessage errors={errors} name="shipAddress" render={({message}) => <span className="text-xs text-red-600 font-bold">{message}</span>} />
                     </div>
                     <div className="sm:flex sm:justify-between sm:gap-4">
                         <div className="py-4">
@@ -105,14 +111,14 @@ const AddressForm = ({
                             <input type="text" {...register("city", { required: "Please enter your city." })}
                                 className="w-full h-10 mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" 
                             />
-                            <ErrorMessage errors={errors} name="city" render={({message}) => <p className="text-xs text-red-600 font-bold">{message}</p>} />
+                            <ErrorMessage errors={errors} name="city" render={({message}) => <span className="text-xs text-red-600 font-bold">{message}</span>} />
                         </div>
                         <div className="py-4">
                             <label htmlFor="postcode" className="block text-sm font-black text-gray-500">ZIP / Postcode</label>
                             <input type="text" {...register("postcode", { required: "Please enter your postcode." })}
                                 className="w-full h-10 mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" 
                             />
-                            <ErrorMessage errors={errors} name="postcode" render={({message}) => <p className="text-xs text-red-600 font-bold">{message}</p>} />
+                            <ErrorMessage errors={errors} name="postcode" render={({message}) => <span className="text-xs text-red-600 font-bold">{message}</span>} />
                         </div>
                     </div>
                     <div className="py-4">
@@ -120,7 +126,7 @@ const AddressForm = ({
                         <input type="text" {...register("country", { required: "Please enter your country." })}
                             className="w-full h-10 mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                         />
-                        <ErrorMessage errors={errors} name="country" render={({message}) => <p className="text-xs text-red-600 font-bold">{message}</p>} />
+                        <ErrorMessage errors={errors} name="country" render={({message}) => <span className="text-xs text-red-600 font-bold">{message}</span>} />
                     </div>
                     <button type="submit" className="block w-full mt-4 px-4 py-2 rounded bg-green-600 hover:bg-green-800 text-white font-bold">PAYMENT METHOD</button>
                 </form>
