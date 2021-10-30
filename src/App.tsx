@@ -28,7 +28,7 @@ export function App() {
                 <Checkout basket_state={basket_state} />
               </Route>
             </Switch>
-          <Footer />
+          <Footer total_quantity={basket_state.total_quantity} />
         </HashRouter>
       </div>
       
