@@ -15,7 +15,7 @@ const BasketItems = ({basket_state}: {basket_state: BasketState}) => {
         )
     } else {
         return (
-            <div className="pt-24 pb-10 px-2 w-full max-w-xl">
+            <div className="pt-20 pb-10 px-2 w-full max-w-xl">
                 <h4 className="px-4 py-2">You have <span className="font-bold">{basket_state.total_quantity}</span> item(s) in the basket.</h4>
                 {/* basket items and total price */}
                 <div className="divide-y-2 divide-gray-400 divide-solid">

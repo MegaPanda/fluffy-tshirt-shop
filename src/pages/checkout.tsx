@@ -33,7 +33,7 @@ const Checkout = ({basket_state}: {basket_state: BasketState}) => {
     };
     
     return (
-        <div className="pt-24 sm:pt-32 pb-10 px-4 w-full max-w-lg">
+        <div className="pt-20 sm:pt-24 pb-10 px-4 w-full max-w-lg">
             <ProgressBar total_quantity={basket_state.total_quantity} currentStep={checkoutState} />
             {checkoutState === "address" && 
                 <FormProvider {...methods}>

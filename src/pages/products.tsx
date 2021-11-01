@@ -113,7 +113,7 @@ const Products = ({basket_items}: {basket_items: BasketItem[]}) => {
     const filters = useAppSelector((state) => state.filters);
     
     return (
-        <div className="pt-24 w-full max-w-screen-xl">
+        <div className="pt-14 w-full max-w-screen-xl">
             <Filters filters={filters}/>
             <div id="items" className="grid grid-cols-2 p-4 pt-0 gap-4 sm:grid-cols-3 lg:grid-cols-4">
                 {sortAndFilter(products, filters).map((product, index) =>

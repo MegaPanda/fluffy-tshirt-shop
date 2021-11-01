@@ -7,7 +7,7 @@ const Contact = () => {
     }, []);
 
     return (
-        <div className="pt-16 w-full pb-10">
+        <div className="pt-14 w-full pb-10">
             <div style={{zIndex: -1}} className="absolute w-full h-48 flex flex-col justify-center text-center bg-gradient-to-r from-red-300 to-pink-300">
                 <h1 className="text-xl font-black text-gray-700">How can we help you?</h1>
                 <p className="text-xs text-gray-700">Fill in the form and get in touch!</p>

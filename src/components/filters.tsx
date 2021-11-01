@@ -34,7 +34,7 @@ const Filters = ({filters}: {filters: FiltersState}) => {
         <div>
             {/* only shows filter toggle menu in smaller screens */}
             <div className="sm:hidden">
-                <button type="button" onClick={() => toggleFilters(!showFilters)} className="ml-4">
+                <button type="button" onClick={() => toggleFilters(!showFilters)} className="ml-4 pt-2">
                     <span className="material-icons text-gray-600 text-3xl">tune</span>
                 </button>
                 <ReactModal isOpen={showFilters} onRequestClose={() => toggleFilters(!showFilters)}
@@ -97,7 +97,7 @@ const Filters = ({filters}: {filters: FiltersState}) => {
                 </ReactModal>
             </div>
             {/* display filters when screens are bigger than 640px */}
-            <div className="hidden sm:block sm:pl-4 sm:pb-4 sm:flex" style={display__border}>
+            <div className="hidden sm:block sm:pl-4 sm:py-4 sm:flex" style={display__border}>
                 <div className="pb-3 sm:pb-0 sm:w-48">
                     <Select
                         options={SortOptionsArray}

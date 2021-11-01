@@ -22,8 +22,8 @@ const Home = () => {
     ];
 
     return (
-        <div className="pt-24 w-full max-w-screen-xl">
-            <div className="pb-4 text-center text-xs sm:text-sm">
+        <div className="pt-14 w-full max-w-screen-xl">
+            <div className="py-4 text-center text-xs sm:text-sm">
                 <FontAwesomeIcon icon={faTruck} flip="horizontal" className="text-gray-600" />
                 &nbsp;&nbsp;Free Shipping Over $60
             </div>

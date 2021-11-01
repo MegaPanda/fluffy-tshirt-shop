@@ -5,16 +5,14 @@ import { BasketState, removeItem } from '../reducers/basketSlice';
 
 const BasketIcon = ({basket_state}: {basket_state: BasketState}) => {
     const shopping_basket_quantity_styles = {
-        position: "relative",
-        width: "16px",
-        height: "12px",
-        top: "15px",
-        right: "-23px"
+        position: "absolute",
+        top: "calc(50% - 5px)",
+        left: "calc(50% - 6px)"
     } as CSSProperties;
     
     const shopping_basket_styles = {
-        top: "76.67px",
-        right: "2px",
+        top: "56px",
+        right: 0,
         width: "350px",
         maxHeight: "70vh",
         zIndex: 999
@@ -26,26 +24,26 @@ const BasketIcon = ({basket_state}: {basket_state: BasketState}) => {
         borderLeft: "14px solid transparent",
         borderRight: "14px solid transparent",
         borderBottom: "12px solid #9CA3AF",
-        top: "65px",
-        right: "16px"
+        bottom: 0,
+        right: "calc(28px - 7px)",
     } as CSSProperties;
 
     const dispatch = useDispatch();
     const location = useLocation();
 
     return (
-        <div id="basket-icon" className="self-end group pl-2 pb-5 sm:pb-4">
+        <div id="basket-icon" className="w-10 rounded-full hover:bg-gray-800 flex group">
             {/* shopping basket icon and item quantity */}
             {basket_state.total_quantity !== 0 && window.innerWidth >= 768
                 // prevent redirection from clicking the icon in bigger screens //
                 // user should use the dropdown menu to navigate instead //
-                ? <Link to="/basket" className="flex text-center sm:pb-1 pointer-events-none">
-                    <span style={shopping_basket_quantity_styles} className="inline-block bg-gray-300 text-blue-900 text-xs font-bold leading-none z-10">{basket_state.total_quantity}</span>
-                    <span className="inline-block material-icons text-3xl z-0">shopping_basket</span>
+                ? <Link to="/basket" className="m-auto relative pointer-events-none">
+                    <div className="material-icons text-3xl z-0">shopping_basket</div>
+                    <span style={shopping_basket_quantity_styles} className="w-3 text-center rounded-full bg-gray-300 text-xs text-yellow-700 font-black leading-none z-10">{basket_state.total_quantity}</span>
                 </Link>
-                : <Link to="/basket" className="flex text-center sm:pb-1">
-                    <span style={shopping_basket_quantity_styles} className="inline-block bg-gray-300 text-blue-900 text-xs font-bold leading-none z-10">{basket_state.total_quantity}</span>
-                    <span className="inline-block material-icons text-3xl z-0">shopping_basket</span>
+                : <Link to="/basket" className="m-auto relative">
+                    <div className="material-icons text-3xl z-0">shopping_basket</div>
+                    <span style={shopping_basket_quantity_styles} className="w-3 text-center rounded-full bg-gray-300 text-xs text-yellow-700 font-black leading-none z-10">{basket_state.total_quantity}</span>
                 </Link>
             }
             {location.pathname === "/basket" || location.pathname === "/checkout" 
