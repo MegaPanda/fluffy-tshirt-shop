@@ -43,10 +43,10 @@ const Filters = ({filters}: {filters: FiltersState}) => {
                             backgroundColor: 'rgba(255, 255, 255, 0.85)',
                         },
                         content: {
-                            top: "78px",
+                            top: "56px",
                             left: 0,
                             right: 0,
-                            bottom: "25%",
+                            bottom: "20%",
                             border: "none",
                             paddingBottom: 0,
                     }}}
