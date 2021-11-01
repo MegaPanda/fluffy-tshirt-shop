@@ -24,7 +24,7 @@ const Product = ({product, basket_items}: {product: ProductType, basket_items: B
                 </div>
             </button>
             {modalProduct && 
-                <ReactModal isOpen={true} className="w-4/5 mx-auto mt-24 bg-gray-300 pb-10 overflow-auto" style={{content: {maxHeight: "80vh"}}} 
+                <ReactModal isOpen={true} className="w-4/5 max-w-xl mx-auto mt-24 bg-gray-300 pb-10 overflow-auto" style={{content: {maxHeight: "80vh"}}} 
                 onRequestClose={() => {
                     showModal(null);
                     chooseSize(null);
@@ -34,9 +34,11 @@ const Product = ({product, basket_items}: {product: ProductType, basket_items: B
                     </div>
                     <div className="w-2/3 sm:w-11/12 m-auto grid sm:grid-cols-2 sm:gap-8">
                         <img className="" src={modalProduct.photo} alt={modalProduct.title}></img>
-                        <div className="pt-4 text-left">
-                            <h1 className="text-lg text-gray-900 font-extrabold">{modalProduct.title}</h1>
-                            <h1 className="text-lg text-yellow-800 font-bold mb-8">${modalProduct.price}</h1>
+                        <div className="pt-4 text-left flex flex-col justify-between">
+                            <div>
+                                <h1 className="text-lg text-gray-900 font-extrabold">{modalProduct.title}</h1>
+                                <h1 className="text-lg text-yellow-800 font-bold mb-8">${modalProduct.price}</h1>
+                            </div>
                             <div className="md:pt-4">
                                 <h4 className="text-sm font-bold text-gray-600 mb-1">SIZE:</h4>
                                 <select className="w-full border border-black rounded-sm p-1" onChange={(event) => chooseSize(event.target.value)}>

@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAppSelector } from "../custom-hooks/useAppSelector";
 
 const Confirmation = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
+
     const checkoutData = useAppSelector(state => state.checkout);
 
     return (
