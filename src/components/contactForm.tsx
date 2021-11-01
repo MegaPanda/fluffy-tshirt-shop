@@ -32,14 +32,14 @@ const ContactForm = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="sm:flex sm:justify-between sm:gap-4">
                     <div className="py-4">
-                        <label htmlFor="firstname" className="block text-sm font-black text-gray-500">First Name:<span className="text-red-600">&nbsp;&nbsp;*</span></label>
+                        <label htmlFor="firstname" className="block text-sm font-black text-gray-500">First Name<span className="text-red-600">&nbsp;&nbsp;*</span></label>
                         <input type="text" {...register("firstname", { required: "This field is required." })}
                             className="w-full h-10 mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                         />
                         <ErrorMessage errors={errors} name="firstname" render={({message}) => <span className="text-xs text-red-600 font-bold">{message}</span>} />
                     </div>
                     <div className="py-4">
-                        <label htmlFor="lastname" className="block text-sm font-black text-gray-500">Last Name:<span className="text-red-600">&nbsp;&nbsp;*</span></label>
+                        <label htmlFor="lastname" className="block text-sm font-black text-gray-500">Last Name<span className="text-red-600">&nbsp;&nbsp;*</span></label>
                         <input type="text" {...register("lastname", { required: "This field is required." })}
                             className="w-full h-10 mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                         />
@@ -47,21 +47,21 @@ const ContactForm = () => {
                     </div>
                 </div>
                 <div className="py-4">
-                    <label htmlFor="email" className="block text-sm font-black text-gray-500">E-mail:<span className="text-red-600">&nbsp;&nbsp;*</span></label>
+                    <label htmlFor="email" className="block text-sm font-black text-gray-500">E-mail<span className="text-red-600">&nbsp;&nbsp;*</span></label>
                     <input type="email" {...register("email", { required: "This field is required." })}
                         className="w-full h-10 mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                     />
                     <ErrorMessage errors={errors} name="email" render={({message}) => <span className="text-xs text-red-600 font-bold">{message}</span>} />
                 </div>
                 <div className="py-4">
-                    <label htmlFor="subject" className="block text-sm font-black text-gray-500">Subject of Inquiry:<span className="text-red-600">&nbsp;&nbsp;*</span></label>
+                    <label htmlFor="subject" className="block text-sm font-black text-gray-500">Subject of Inquiry<span className="text-red-600">&nbsp;&nbsp;*</span></label>
                     <input type="text" {...register("subject", { required: "This field is required." })}
                         className="w-full h-10 mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                     />
                     <ErrorMessage errors={errors} name="subject" render={({message}) => <span className="text-xs text-red-600 font-bold">{message}</span>} />
                 </div>
                 <div className="py-4">
-                    <label htmlFor="message" className="block text-sm font-black text-gray-500">Message:<span className="text-red-600">&nbsp;&nbsp;*</span></label>
+                    <label htmlFor="message" className="block text-sm font-black text-gray-500">Message<span className="text-red-600">&nbsp;&nbsp;*</span></label>
                     <textarea rows={5} {...register("message", { required: "This field is required." })}
                         className="w-full mt-1 px-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                     />

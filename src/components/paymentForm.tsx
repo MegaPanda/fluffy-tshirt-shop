@@ -63,7 +63,7 @@ const PaymentForm = ({
                                     required: "Valid thru date is required.",
                                     pattern: {
                                         value: /0[1-9]|1[0-2]\/\d{2}/,
-                                        message: "The format is MM/YY",
+                                        message: "The format is MM/YY.",
                                     }
                                 }}
                                 render={({ field: { onChange, value } }) => (
