@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-shopping-cart/static/css/main.ff0db209.chunk.css",
-    "main.js": "/react-shopping-cart/static/js/main.3253c98e.chunk.js",
-    "main.js.map": "/react-shopping-cart/static/js/main.3253c98e.chunk.js.map",
+    "main.css": "/react-shopping-cart/static/css/main.6697a9f4.chunk.css",
+    "main.js": "/react-shopping-cart/static/js/main.37a194d7.chunk.js",
+    "main.js.map": "/react-shopping-cart/static/js/main.37a194d7.chunk.js.map",
     "runtime-main.js": "/react-shopping-cart/static/js/runtime-main.59f25911.js",
     "runtime-main.js.map": "/react-shopping-cart/static/js/runtime-main.59f25911.js.map",
     "static/js/2.559271f2.chunk.js": "/react-shopping-cart/static/js/2.559271f2.chunk.js",
     "static/js/2.559271f2.chunk.js.map": "/react-shopping-cart/static/js/2.559271f2.chunk.js.map",
     "index.html": "/react-shopping-cart/index.html",
-    "precache-manifest.9b6dc0d64cbef0d36e2bdcf4f8321214.js": "/react-shopping-cart/precache-manifest.9b6dc0d64cbef0d36e2bdcf4f8321214.js",
+    "precache-manifest.5f41c9f71562a3ff5713e9034dac8618.js": "/react-shopping-cart/precache-manifest.5f41c9f71562a3ff5713e9034dac8618.js",
     "service-worker.js": "/react-shopping-cart/service-worker.js",
-    "static/css/main.ff0db209.chunk.css.map": "/react-shopping-cart/static/css/main.ff0db209.chunk.css.map",
+    "static/css/main.6697a9f4.chunk.css.map": "/react-shopping-cart/static/css/main.6697a9f4.chunk.css.map",
     "static/js/2.559271f2.chunk.js.LICENSE.txt": "/react-shopping-cart/static/js/2.559271f2.chunk.js.LICENSE.txt",
     "static/media/border.jpg": "/react-shopping-cart/static/media/border.d79653c4.jpg",
     "static/media/golden.jpg": "/react-shopping-cart/static/media/golden.4246235c.jpg",
@@ -27,7 +27,7 @@
   "entrypoints": [
     "static/js/runtime-main.59f25911.js",
     "static/js/2.559271f2.chunk.js",
-    "static/css/main.ff0db209.chunk.css",
-    "static/js/main.3253c98e.chunk.js"
+    "static/css/main.6697a9f4.chunk.css",
+    "static/js/main.37a194d7.chunk.js"
   ]
 }
