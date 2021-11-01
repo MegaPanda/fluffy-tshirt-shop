@@ -6,7 +6,7 @@ import { BasketState, removeItem } from '../reducers/basketSlice';
 const BasketIcon = ({basket_state}: {basket_state: BasketState}) => {
     const shopping_basket_quantity_styles = {
         position: "absolute",
-        top: "calc(50% - 5px)",
+        top: "calc(50% - 4px)",
         left: "calc(50% - 6px)"
     } as CSSProperties;
     

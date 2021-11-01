@@ -17,18 +17,18 @@ const Header = ({basket_state}: {basket_state: BasketState}) => {
                 show navigation to the basket and omit the basket icon */}
             {location.pathname === "/checkout" && basket_state.total_quantity !== 0
                 ?   
-                <header style={{maxWidth: "1246px"}} className="py-2 sm:py-4 px-1 m-auto flex text-center">
+                <header className="max-w-screen-xl py-2 sm:py-4 px-1 m-auto flex text-center items-center">
                     <Link to="/basket" className="block p-1 w-10">
                         <p className="material-icons block">arrow_back_ios_new</p>
                         <p className="text-2xs leading-3 font-bold">&nbsp;BASKET</p>
                     </Link>
                     <div className="flex-grow">
-                        <span className="material-icons relative cursor-default" style={{top: "4px", fontSize: "36px"}}>pets</span>
+                        <FontAwesomeIcon icon={faPaw} size="lg" />
                     </div>
-                    <div className="w-14"></div>
+                    <div className="w-10"></div>
                 </header>
                 :
-                <header style={{maxWidth: "1246px"}} className="p-2 relative m-auto flex justify-between">
+                <header className="max-w-screen-xl p-2 relative m-auto flex justify-between">
                     <div className="md:hidden w-10 cursor-pointer text-center flex flex-col justify-center" onClick={() => setShowNavBar(!showNavBar)}>
                         <div><FontAwesomeIcon icon={faPaw} /></div>
                         <p className="text-2xs leading-none">MENU</p>
