@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -19,6 +19,13 @@ const ImgSlider = ({
     const [currentIndex, setCurrentIndex] = useState(0)
     const nextSlide = () => setCurrentIndex(currentIndex === imgData.length - 1 ? 0 : currentIndex + 1);
     const prevSlide = () => setCurrentIndex(currentIndex === 0 ? imgData.length - 1 : currentIndex - 1);
+    useEffect(() => {
+        let timer = setTimeout(() => {
+            setCurrentIndex(currentIndex === imgData.length - 1 ? 0 : currentIndex + 1);
+        }, 2500);
+
+        return () => clearTimeout(timer)
+    }, [currentIndex, imgData.length]);
     return (
         <div className="relative">
             <div className="bg-white sm:grid sm:grid-cols-2 lg:grid-cols-3">

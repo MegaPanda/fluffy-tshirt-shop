@@ -24,7 +24,7 @@ const Product = ({product, basket_items}: {product: ProductType, basket_items: B
                 </div>
             </button>
             {modalProduct && 
-                <ReactModal isOpen={true} className="w-4/5 max-w-xl mx-auto mt-24 bg-gray-300 pb-10 overflow-auto" style={{content: {maxHeight: "80vh"}}} 
+                <ReactModal isOpen={true} className="w-4/5 max-w-xs sm:max-w-xl m-auto mt-24 sm:mt-40 bg-gray-300 pb-10 overflow-auto" style={{content: {maxHeight: "80vh"}}} 
                 onRequestClose={() => {
                     showModal(null);
                     chooseSize(null);
