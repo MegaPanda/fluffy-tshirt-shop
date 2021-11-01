@@ -25,7 +25,7 @@ const BasketIcon = ({basket_state}: {basket_state: BasketState}) => {
         borderRight: "14px solid transparent",
         borderBottom: "12px solid #9CA3AF",
         bottom: 0,
-        right: "calc(28px - 7px)",
+        right: "calc(20px - 7px)",
     } as CSSProperties;
 
     const dispatch = useDispatch();
