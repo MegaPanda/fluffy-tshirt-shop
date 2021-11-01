@@ -6,6 +6,8 @@ import BasketItems from './pages/basket';
 import Checkout from './pages/checkout';
 import { useAppSelector } from './custom-hooks/useAppSelector';
 import Footer from './components/footer';
+import Home from './pages/home';
+import Contact from './pages/contact';
 
 
 export function App() {
@@ -16,7 +18,7 @@ export function App() {
           <Header basket_state={basket_state} />
             <Switch>
               <Route exact path="/">
-                <Products basket_items={basket_state.items} />
+                <Home />
               </Route>
               <Route path="/products">
                 <Products basket_items={basket_state.items} />
@@ -26,6 +28,9 @@ export function App() {
               </Route>
               <Route path="/checkout">
                 <Checkout basket_state={basket_state} />
+              </Route>
+              <Route exact path="/contact">
+                <Contact />
               </Route>
             </Switch>
           <Footer total_quantity={basket_state.total_quantity} />

@@ -27,8 +27,8 @@ const Footer = ({total_quantity}: {total_quantity: number}) => {
                         <div className="text-xs sm:text-base">
                             <Link to="/" className="p-2 sm:px-4 font-bold">HOME</Link>
                             <Link to="/" className="p-2 sm:px-4 font-bold">STORY</Link>
-                            <Link to="/" className="p-2 sm:px-4 font-bold">PRODUCTS</Link>
-                            <Link to="/" className="p-2 sm:px-4 font-bold">CONTACT</Link>
+                            <Link to="/products" className="p-2 sm:px-4 font-bold">PRODUCTS</Link>
+                            <Link to="/contact" className="p-2 sm:px-4 font-bold">CONTACT</Link>
                         </div>
                     </div>
                     <div className="text-center">

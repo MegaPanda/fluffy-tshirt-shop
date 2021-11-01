@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Filters from '../components/filters';
 import { BasketItem } from "../reducers/basketSlice";
 import gsd from '../images/gsd.jpg';
@@ -73,6 +73,10 @@ export type ProductType = typeof products[0];
 
 
 const Products = ({basket_items}: {basket_items: BasketItem[]}) => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
+
     const sortAndFilter = (products: ProductType[], filters: FiltersState) => {
         for (const filter of Object.values(filters)) {
             switch (filter) {
