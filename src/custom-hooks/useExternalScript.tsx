@@ -22,5 +22,5 @@ export const useExternalScript = (url: string, id: string, callback?: () => void
         if (existingScript && callback) {
             callback();
         }
-    }, [url, id, callback]);
+    }, );
 };

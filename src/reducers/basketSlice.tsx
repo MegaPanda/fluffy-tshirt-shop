@@ -20,6 +20,22 @@ const initialState: BasketState = {
     total_price: 0
 };
 
+const loadBasketState = () => {
+    try {
+        const serializedBasketState = localStorage.getItem("basketState");
+        if (serializedBasketState === null) {
+            return initialState;
+        }
+        return JSON.parse(serializedBasketState) as BasketState;
+    } catch (err: unknown) {
+        if (err instanceof Error) {
+            console.log(err)
+        }
+        return initialState;
+    }
+};
+const persistedBasketState = loadBasketState();
+
 export interface BasketAction {
     photo: string,
     title: string;
@@ -30,7 +46,7 @@ export interface BasketAction {
 
 export const basketSlice = createSlice({
     name: "basket",
-    initialState,
+    initialState: persistedBasketState,
     reducers: {
         addItem: (state, action: PayloadAction<BasketAction>) => {
             let basketItemIndex = state.items.findIndex(item => item.title === action.payload.title && item.size === action.payload.size);
