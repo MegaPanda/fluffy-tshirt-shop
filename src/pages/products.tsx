@@ -1,81 +1,30 @@
 import React, { useEffect } from "react";
 import Filters from '../components/filters';
 import { BasketItem } from "../reducers/basketSlice";
-import gsd from '../images/gsd.jpg';
-import husky from '../images/husky.jpg';
-import golden from '../images/golden.jpg';
-import border from '../images/border.jpg';
-import pug from '../images/pug.jpg';
 import { FiltersState } from "../reducers/filtersSlice";
 import { HIGH_TO_LOW, L, LOW_TO_HIGH, M, NEW, PRICE_ALL, S, SIZE_ALL, UNDER_10 } from "../constants";
 import Product from "../components/product";
 import { useAppSelector } from "../custom-hooks/useAppSelector";
+import useGetData from "../custom-hooks/useGetData";
 
-const products = [
-    {
-        index: 0,
-        photo: gsd,
-        title: "German Shepherd",
-        price: 19.99,
-        sizes: {
-            S: 0,
-            M: 5,
-            L: 3
-        }
-    },
-    {
-        index: 4,
-        photo: husky,
-        title: "Husky",
-        price: 14.99,
-        sizes: {
-            S: 2,
-            M: 5,
-            L: 3
-        }
-    },
-    {
-        index: 2,
-        photo: golden,
-        title: "Golden Retriever",
-        price: 19.99,
-        sizes: {
-            S: 2,
-            M: 0,
-            L: 3
-        }
-    },
-    {
-        index: 3,
-        photo: border,
-        title: "Border Collie",
-        price: 9.99,
-        sizes: {
-            S: 2,
-            M: 5,
-            L: 3
-        }
-    },
-    {
-        index: 1,
-        photo: pug,
-        title: "Pug",
-        price: 6.99,
-        sizes: {
-            S: 2,
-            M: 5,
-            L: 0
-        }
+export type ProductType = {
+    index: number,
+    photo: string,
+    title: string,
+    price: number,
+    sizes: {
+        S: number,
+        M: number,
+        L: number
     }
-];
-
-export type ProductType = typeof products[0];
-
+};
 
 const Products = ({basket_items}: {basket_items: BasketItem[]}) => {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, []);
+
+    const products = useGetData("products");
 
     const sortAndFilter = (products: ProductType[], filters: FiltersState) => {
         for (const filter of Object.values(filters)) {
@@ -116,9 +65,11 @@ const Products = ({basket_items}: {basket_items: BasketItem[]}) => {
         <div className="pt-14 w-full max-w-screen-xl">
             <Filters filters={filters}/>
             <div id="items" className="grid grid-cols-2 p-4 pt-0 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-                {sortAndFilter(products, filters).map((product, index) =>
-                    <Product product={product} key={index} basket_items={basket_items} />
-                )}
+                {products
+                    ? sortAndFilter(products, filters).map((product, index) =>
+                        <Product product={product} key={index} basket_items={basket_items} />)
+                    : <p>Loading...</p>
+                }
             </div>
         </div>
     )

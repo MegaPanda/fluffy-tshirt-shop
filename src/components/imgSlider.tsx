@@ -26,6 +26,7 @@ const ImgSlider = ({
 
         return () => clearTimeout(timer)
     }, [currentIndex, imgData.length]);
+    
     return (
         <div className="relative">
             <div className="bg-white sm:grid sm:grid-cols-2 lg:grid-cols-3">
