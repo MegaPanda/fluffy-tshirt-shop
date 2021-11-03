@@ -1,33 +1,22 @@
 {
   "files": {
     "main.css": "/react-shopping-cart/static/css/main.0ffb5187.chunk.css",
-    "main.js": "/react-shopping-cart/static/js/main.37acbc3f.chunk.js",
-    "main.js.map": "/react-shopping-cart/static/js/main.37acbc3f.chunk.js.map",
+    "main.js": "/react-shopping-cart/static/js/main.518bccff.chunk.js",
+    "main.js.map": "/react-shopping-cart/static/js/main.518bccff.chunk.js.map",
     "runtime-main.js": "/react-shopping-cart/static/js/runtime-main.59f25911.js",
     "runtime-main.js.map": "/react-shopping-cart/static/js/runtime-main.59f25911.js.map",
-    "static/js/2.54b52c59.chunk.js": "/react-shopping-cart/static/js/2.54b52c59.chunk.js",
-    "static/js/2.54b52c59.chunk.js.map": "/react-shopping-cart/static/js/2.54b52c59.chunk.js.map",
+    "static/js/2.54166f85.chunk.js": "/react-shopping-cart/static/js/2.54166f85.chunk.js",
+    "static/js/2.54166f85.chunk.js.map": "/react-shopping-cart/static/js/2.54166f85.chunk.js.map",
     "index.html": "/react-shopping-cart/index.html",
-    "precache-manifest.7f81eab92d24d84c2599200c05ec7230.js": "/react-shopping-cart/precache-manifest.7f81eab92d24d84c2599200c05ec7230.js",
+    "precache-manifest.74cf5faddbbf9379a17749bbf7cd0104.js": "/react-shopping-cart/precache-manifest.74cf5faddbbf9379a17749bbf7cd0104.js",
     "service-worker.js": "/react-shopping-cart/service-worker.js",
     "static/css/main.0ffb5187.chunk.css.map": "/react-shopping-cart/static/css/main.0ffb5187.chunk.css.map",
-    "static/js/2.54b52c59.chunk.js.LICENSE.txt": "/react-shopping-cart/static/js/2.54b52c59.chunk.js.LICENSE.txt",
-    "static/media/border.jpg": "/react-shopping-cart/static/media/border.d79653c4.jpg",
-    "static/media/golden.jpg": "/react-shopping-cart/static/media/golden.4246235c.jpg",
-    "static/media/gsd.jpg": "/react-shopping-cart/static/media/gsd.6151874a.jpg",
-    "static/media/husky.jpg": "/react-shopping-cart/static/media/husky.d83a44a8.jpg",
-    "static/media/pug.jpg": "/react-shopping-cart/static/media/pug.75862793.jpg",
-    "static/media/summer1.jpg": "/react-shopping-cart/static/media/summer1.ed317582.jpg",
-    "static/media/summer2.jpg": "/react-shopping-cart/static/media/summer2.bd54a7e9.jpg",
-    "static/media/summer3.jpg": "/react-shopping-cart/static/media/summer3.49bc9804.jpg",
-    "static/media/winter1.jpg": "/react-shopping-cart/static/media/winter1.5c84e641.jpg",
-    "static/media/winter2.jpg": "/react-shopping-cart/static/media/winter2.07014bd3.jpg",
-    "static/media/winter3.jpg": "/react-shopping-cart/static/media/winter3.43a347a0.jpg"
+    "static/js/2.54166f85.chunk.js.LICENSE.txt": "/react-shopping-cart/static/js/2.54166f85.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.59f25911.js",
-    "static/js/2.54b52c59.chunk.js",
+    "static/js/2.54166f85.chunk.js",
     "static/css/main.0ffb5187.chunk.css",
-    "static/js/main.37acbc3f.chunk.js"
+    "static/js/main.518bccff.chunk.js"
   ]
 }
