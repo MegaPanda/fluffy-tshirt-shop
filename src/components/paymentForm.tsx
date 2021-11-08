@@ -1,13 +1,15 @@
 import { ErrorMessage } from "@hookform/error-message";
+import { AsyncThunk } from "@reduxjs/toolkit";
 import React, { useEffect } from "react";
 import { useFormContext, Controller } from "react-hook-form";
 import InputMask from "react-input-mask";
+import { useDispatch } from "react-redux";
 import { UserCheckoutForm } from "../reducers/checkoutSlice";
 
 const PaymentForm = ({
-        placeOrder
+        submitOrder
     }: {
-        placeOrder: (data: UserCheckoutForm, isAccepted: boolean) => void
+        submitOrder: AsyncThunk<void, UserCheckoutForm, {}>
     }) => {
     
     // always scroll the page to the top when the component is mounted //
@@ -16,11 +18,12 @@ const PaymentForm = ({
     }, []);
 
     const { register, handleSubmit, formState: { errors, isValid }, control } = useFormContext();
-
+    const dispatch = useDispatch();
+    
     return (
         <div className="bg-white p-4">
             <h1 className="text-2xl font-black mb-4">Payment Method</h1>
-            <form onSubmit={handleSubmit((data: UserCheckoutForm) => placeOrder(data, true))}>
+            <form onSubmit={handleSubmit((data: UserCheckoutForm) => dispatch(submitOrder(data)))}>
                 <div>
                     <div className="py-4">
                         <label htmlFor="cardNumber" className="block text-sm font-black text-gray-500">Card Number</label>

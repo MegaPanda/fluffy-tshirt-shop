@@ -1,3 +1,4 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
@@ -8,6 +9,9 @@ import PaymentForm from '../components/paymentForm';
 import ProgressBar from '../components/progressBar';
 import { BasketState, clearBasket } from '../reducers/basketSlice';
 import { updateData, UserCheckoutForm } from '../reducers/checkoutSlice';
+import { store } from '../store';
+import { ref, push, set } from "firebase/database";
+import { firebaseDatabase } from '../firebase/firebase';
 
 const Checkout = ({basket_state}: {basket_state: BasketState}) => {
     const dispatch = useDispatch();
@@ -22,15 +26,21 @@ const Checkout = ({basket_state}: {basket_state: BasketState}) => {
     const prevStep = (page: string) => {
         setCheckoutState(page);
     };
-    const placeOrder = (data: UserCheckoutForm, isAccepted: boolean) => {
+
+    const submitOrder = createAsyncThunk("checkout/submitOrder", (data: UserCheckoutForm) => {
         dispatch(updateData(data));
-        if (isAccepted) {
+        const order = {
+            ...store.getState().checkout,
+            orderDetails: store.getState().basket.items,
+        };
+        
+        set(push(ref(firebaseDatabase, "orders")), {
+            ...order
+        }).then(() => {
             dispatch(clearBasket());
             setCheckoutState("complete");
-        } else {
-            setCheckoutState("complete");
-        }
-    };
+        })
+    });
     
     return (
         <div className="pt-20 sm:pt-24 pb-10 px-4 w-full max-w-lg">
@@ -46,7 +56,7 @@ const Checkout = ({basket_state}: {basket_state: BasketState}) => {
                     <div>
                         <button onClick={() => prevStep("address")} className="p-2 text-xs text-gray-600 font-bold"><span className="material-icons text-xs align-bottom">arrow_back_ios_new</span>&nbsp;ADDRESS</button>
                         <FormProvider {...methods}>
-                            <PaymentForm placeOrder={placeOrder} />
+                            <PaymentForm submitOrder={submitOrder} />
                         </FormProvider>
                     </div>
                 </div>

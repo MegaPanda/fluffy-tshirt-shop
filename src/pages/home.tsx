@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTruck } from "@fortawesome/free-solid-svg-icons"; 
-import ImgSlider from "../components/imgSlider";
+import ImgSlider, { ImgData } from "../components/imgSlider";
 import useGetData from "../custom-hooks/useGetData";
 
 const Home = () => {
@@ -9,8 +9,8 @@ const Home = () => {
         window.scrollTo(0, 0)
     }, []);
     
-    const imgSummer = useGetData("homeImgSlider/summerCollection");
-    const imgWinter = useGetData("homeImgSlider/winterCollection");
+    const imgSummer = useGetData<ImgData[]>("homeImgSlider/summerCollection");
+    const imgWinter = useGetData<ImgData[]>("homeImgSlider/winterCollection");
 
     return (
         <div className="pt-14 w-full max-w-screen-xl">

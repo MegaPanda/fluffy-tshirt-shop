@@ -1,10 +1,10 @@
-import { ref, child, get } from "firebase/database";
+import { ref, get, child } from "firebase/database";
 import { firebaseDatabase } from "../firebase/firebase";
 import { FirebaseError } from "@firebase/util";
 import { useEffect, useState } from "react";
 
-const useGetData = (key: string) => {
-    const [data, setData] = useState(null);
+const useGetData = <T, >(key: string): T | null  => {
+    const [data, setData] = useState<T | null>(null);
 
     useEffect(() => {
         const dbRef = ref(firebaseDatabase);

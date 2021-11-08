@@ -24,7 +24,7 @@ const Products = ({basket_items}: {basket_items: BasketItem[]}) => {
         window.scrollTo(0, 0)
     }, []);
 
-    const products = useGetData("products");
+    const products = useGetData<ProductType[]>("products");
 
     const sortAndFilter = (products: ProductType[], filters: FiltersState) => {
         for (const filter of Object.values(filters)) {
