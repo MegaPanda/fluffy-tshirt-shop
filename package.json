@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://megapanda.github.io/react-shopping-site/",
+  "homepage": "https://megapanda.github.io/fluffy-tshirt-shop/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -11,9 +11,6 @@
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "@hookform/error-message": "^2.0.0",
     "@reduxjs/toolkit": "^1.6.2",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
     "@types/google.maps": "^3.45.6",
     "@types/jest": "^24.9.1",
     "@types/node": "^12.20.28",
@@ -46,8 +43,6 @@
     "prebuild": "NODE_ENV=production npm run build:tailwind ",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
