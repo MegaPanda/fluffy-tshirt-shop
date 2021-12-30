@@ -1,6 +1,6 @@
 # Fluffy T-Shirt Shop
 
-[![website image](https://raw.githubusercontent.com/MegaPanda/fluffy-tshirt-shop/master/public/fluffy_shop.jpg)](https://megapanda.github.io/fluffy-tshirt-shop/)
+[![website image](https://weilunma.dev/fluffy-shop.jpg)](https://megapanda.github.io/fluffy-tshirt-shop/)
 
 ## About The Project
 Fluffy T-Shirt Shop is a single-page, responsive online shopping website built in **TypeScript** with **React** and **Tailwind**.</p>
